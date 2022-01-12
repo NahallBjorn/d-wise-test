@@ -1,5 +1,6 @@
 <script lang='ts'>
     import OddSum from "./OddSum.svelte";
+    import SumLabel from "./SumLabel.svelte";
 
     let result = 0;
 
@@ -7,11 +8,10 @@
 
 <div class="container">
     <div class="backbone">
-        <OddSum bind:sum={result} />
-        <p class="label"> Sum: {result} </p>
+        <OddSum bind:sum={result}/>
+        <SumLabel bind:label={result}/>
     </div>
 </div>
-
 
 <style>
     .container {
@@ -19,6 +19,7 @@
         display: flex;
         justify-content: center;
     }
+
     .backbone {
         display: flex;
         flex-direction: column;
@@ -27,10 +28,5 @@
         width: 500px;
         height: 400px;
         background-color: #1FA2FF;
-    }
-    .label {
-        font-size: 21px;
-        color: #f4f4f4;
-        font-family: Monaco;
     }
 </style>
